@@ -9,8 +9,8 @@ on:
   workflow_dispatch:
 
 env:
-  DOCKER_PROJECT_NAME: 'examen_final_2025'
-  APP_CONTAINER_NAME: 'examen_2025'
+  DOCKER_PROJECT_NAME: 'product_2025'
+  APP_CONTAINER_NAME: 'product_app_2025'
   SONAR_HOST_URL: 'http://localhost:9000'
 
 
@@ -42,7 +42,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           mvn sonar:sonar \
-            -Dsonar.projectKey=examen_final_2025 \
+            -Dsonar.projectKey=product_2025 \
             -Dsonar.host.url=${{ env.SONAR_HOST_URL }} \
             -Dsonar.login=$SONAR_TOKEN
 
